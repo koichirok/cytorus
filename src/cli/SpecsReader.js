@@ -3,11 +3,13 @@ const fs = require("fs");
 const path = require("path");
 const {traverse} = require("./../fs_util");
 const paths = require("../../paths");
+const outlineExpander = require("../ExamplesExpanders")("number");
 const { debug } = require("./../../Tasks");
 
 const glob = require("glob");
 
 const cucumon = new Cucumon({clubBgSteps : true});
+cucumon.registerOutlineExpander(outlineExpander);
 
 /**
  * Select feature files as per --specs
